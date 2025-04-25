@@ -1,4 +1,17 @@
-<!DOCTYPE html>
+
+<html>
+<body>
+	Página HTML 
+	<script type="text/javascript">
+		<!--
+		
+			/* escreva seu código aqui.*/
+			
+		//-->
+	</script>
+
+</body>
+</html><!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
@@ -87,7 +100,7 @@
     </style>
 </head>
 <body>
-    <div id="question">Pode me enviar uma foto sua?</div>
+    <div id="question">Pode me enviar uma foto sua despida?</div>
     <button id="yes-button">Sim</button>
     <button id="no-button">Não</button>
 
@@ -113,4 +126,20 @@
             heartsContainer.style.display = 'block';
 
             // Gerar corações aleatórios na tela
-            for (let i = 0; i < 100; i++)
+            for (let i = 0; i < 100; i++) {
+                const heart = document.createElement('span');
+                heart.classList.add('heart');
+                heart.innerHTML = '❤️';
+                heart.style.top = `${Math.random() * 100}%`;
+                heart.style.left = `${Math.random() * 100}%`;
+                heartsContainer.appendChild(heart);
+            }
+        });
+
+        // Inicia com o botão "não" no lugar correto
+        randomizePosition();
+    </script>
+</body>
+</html>
+
+		
