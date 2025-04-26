@@ -1,145 +1,138 @@
-
-<html>
-<body>
-	Página HTML 
-	<script type="text/javascript">
-		<!--
-		
-			/* escreva seu código aqui.*/
-			
-		//-->
-	</script>
-
-</body>
-</html><!DOCTYPE html>
-<html lang="pt-br">
+<!DOCTYPE html>
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interação de Botões</title>
+    <title>XVideos - Página de Vídeo</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            text-align: center;
-            padding: 50px;
-            background-color: #f0f0f0;
             margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
         }
-
-        #question {
+        header {
+            background-color: #222;
+            color: white;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header .logo {
             font-size: 24px;
-            margin-bottom: 20px;
+            font-weight: bold;
         }
-
-        #yes-button {
-            background-color: green;
-            color: white;
-            border: none;
-            padding: 15px 30px;
-            font-size: 18px;
-            cursor: pointer;
+        header .search-bar input {
+            padding: 5px;
+            font-size: 14px;
+            width: 300px;
             border-radius: 5px;
+            border: 1px solid #ccc;
         }
-
-        #no-button {
-            background-color: red;
+        header .menu {
+            display: flex;
+            gap: 20px;
+        }
+        header .menu a {
             color: white;
-            border: none;
-            padding: 15px 30px;
-            font-size: 18px;
-            cursor: pointer;
-            border-radius: 5px;
-            position: absolute;
+            text-decoration: none;
         }
-
-        .heart {
-            font-size: 50px;
+        .main-content {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .video-container {
+            width: 70%;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        .video-container h2 {
+            font-size: 26px;
+            color: #333;
+        }
+        .video-container .video-thumbnail {
+            width: 50%;
+            max-width: 600px;
+            border-radius: 10px;
+        }
+        .video-container .disabled-message {
             color: red;
-            animation: pulse 1s infinite;
+            font-size: 18px;
+            margin-top: 20px;
         }
-
-        @keyframes pulse {
-            0% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.2);
-            }
-            100% {
-                transform: scale(1);
-            }
+        .side-bar {
+            width: 25%;
+            margin-left: 20px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
-
-        #hearts {
-            display: none;
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(255, 255, 255, 0.9);
-            z-index: 1000;
+        .side-bar h3 {
+            font-size: 20px;
+            color: #333;
+        }
+        .side-bar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .side-bar ul li {
+            margin: 10px 0;
+        }
+        .footer {
+            background-color: #222;
+            color: white;
+            padding: 10px;
             text-align: center;
-        }
-
-        #hearts span {
-            position: absolute;
-            animation: move-hearts 3s linear infinite;
-        }
-
-        @keyframes move-hearts {
-            0% {
-                top: 100%;
-                left: 50%;
-            }
-            100% {
-                top: 0%;
-                left: random;
-            }
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
-    <div id="question">FELIPE É UM TREMENDO VIADÃO?</div>
-    <button id="yes-button">Sim</button>
-    <button id="no-button">Não</button>
 
-    <div id="hearts"></div>
+    <!-- Header with logo and navigation -->
+    <header>
+        <div class="logo">Vazados de simolandia GO</div>
+        <div class="search-bar">
+            <input type="text" placeholder="Pesquisar...">
+        </div>
+        <div class="menu">
+            <a href="#">Home</a>
+            <a href="#">Trending</a>
+            <a href="#">Subscriptions</a>
+        </div>
+    </header>
 
-    <script>
-        const noButton = document.getElementById('no-button');
-        const heartsContainer = document.getElementById('hearts');
+    <!-- Main content with video and sidebar -->
+    <div class="main-content">
+        <div class="video-container">
+            <h2>Felipe sendo torado por Nayan em troca de uma CGzona</h2>
+            <p class="disabled-message">Este vídeo não está disponível.</p>
+            <a href="https://ibb.co/qYWMYJXj">
+                <img class="video-thumbnail" src="https://i.ibb.co/QvCFvDzQ/IMG-1674.jpg" alt="Imagem do vídeo" />
+            </a>
+            <p>Este vídeo não pode ser assistido por causar confusão nas sexualidades dos machos alfas.</p>
+        </div>
 
-        // Função para gerar uma posição aleatória para o botão "não"
-        function randomizePosition() {
-            const randomTop = Math.random() * window.innerHeight;
-            const randomLeft = Math.random() * window.innerWidth;
-            noButton.style.top = `${randomTop}px`;
-            noButton.style.left = `${randomLeft}px`;
-        }
+        <!-- Sidebar with video suggestions -->
+        <div class="side-bar">
+            <h3>Vídeos recomendados</h3>
+            <ul>
+                <li><a href="#">Vídeo 1 - lipe.gmz pagando babão sensacioanl</a></li>
+                <li><a href="#">Vídeo 2 - Rebolando de ladinho pros crias</a></li>
+                <li><a href="#">Vídeo 3 - Recebendo a cg de nayan</a></li>
+            </ul>
+        </div>
+    </div>
 
-        // Chama a função sempre que o botão "não" é clicado
-        noButton.addEventListener('click', randomizePosition);
+    <!-- Footer with copyright -->
+    <footer class="footer">
+        <p>&copy; 2025 XVideos - Todos os direitos reservados.</p>
+    </footer>
 
-        // Quando clicar no botão "Sim", exibe a tela cheia de corações
-        document.getElementById('yes-button').addEventListener('click', () => {
-            heartsContainer.style.display = 'block';
-
-            // Gerar corações aleatórios na tela
-            for (let i = 0; i < 100; i++) {
-                const heart = document.createElement('span');
-                heart.classList.add('heart');
-                heart.innerHTML = '🏳️‍🌈';
-                heart.style.top = `${Math.random() * 100}%`;
-                heart.style.left = `${Math.random() * 100}%`;
-                heartsContainer.appendChild(heart);
-            }
-        });
-
-        // Inicia com o botão "não" no lugar correto
-        randomizePosition();
-    </script>
 </body>
 </html>
-
-		
