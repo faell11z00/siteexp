@@ -2,55 +2,75 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <title>Atividades</title>
+  <title>Luiz Fernando & Paulo</title>
   <style>
     body {
       margin: 0;
       height: 100vh;
+      background-color: #f2f2f2;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
-      background-color: #f2f2f2;
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 28px;
+      margin-bottom: 40px;
+    }
+
+    .button-container {
+      display: flex;
+      gap: 20px;
     }
 
     button {
-      font-size: 24px;
-      padding: 20px 40px;
+      font-size: 20px;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .btn-sim {
       background-color: #28a745;
       color: white;
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
-      transition: background-color 0.3s;
     }
 
-    button:hover {
-      background-color: #218838;
+    .btn-nao {
+      background-color: #ccc;
+      color: black;
     }
   </style>
-  <script>
-    // Evita recarregamentos contínuos com atraso
-    let reloadTimeout;
-    document.addEventListener('mousemove', function () {
-      if (!reloadTimeout) {
-        reloadTimeout = setTimeout(() => {
-          location.reload();
-        }, 1000);
-      }
-    });
-
-    // Redireciona após alerta com pequeno atraso
-    function acessarConteudo() {
-      alert("Você precisa ouvir o áudio antes de acessar a atividade.");
-      setTimeout(() => {
-        window.location.href = "https://screenapp.io/app/#/shared/-RSSc_pRTD";
-      }, 100); // Delay para garantir redirecionamento após o alert
-    }
-  </script>
 </head>
 <body>
-  <button onclick="acessarConteudo()">
-    Acessar conteúdo das atividades
-  </button>
+  <h1>Luiz Fernando paga babão pra Paulo beleza</h1>
+
+  <div class="button-container">
+    <button class="btn-sim">Sim</button>
+    <button id="botao-nao" class="btn-nao" onclick="trocarParaSim()">Não</button>
+  </div>
+
+  <!-- Música instrumental fina (piano) -->
+  <audio id="musica" autoplay loop>
+    <source src="https://www.bensound.com/bensound-music/bensound-slowmotion.mp3" type="audio/mpeg">
+    Seu navegador não suporta áudio.
+  </audio>
+
+  <script>
+    // Volume baixo
+    const musica = document.getElementById("musica");
+    musica.volume = 0.1;
+
+    function trocarParaSim() {
+      const botaoNao = document.getElementById("botao-nao");
+      botaoNao.textContent = "Sim";
+      botaoNao.classList.remove("btn-nao");
+      botaoNao.classList.add("btn-sim");
+      botaoNao.disabled = true;
+    }
+  </script>
 </body>
 </html>
