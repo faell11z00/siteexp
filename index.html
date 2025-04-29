@@ -1,138 +1,56 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>XVideos - Página de Vídeo</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f9f9f9;
-        }
-        header {
-            background-color: #222;
-            color: white;
-            padding: 10px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        header .logo {
-            font-size: 24px;
-            font-weight: bold;
-        }
-        header .search-bar input {
-            padding: 5px;
-            font-size: 14px;
-            width: 300px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-        }
-        header .menu {
-            display: flex;
-            gap: 20px;
-        }
-        header .menu a {
-            color: white;
-            text-decoration: none;
-        }
-        .main-content {
-            display: flex;
-            justify-content: center;
-            margin-top: 20px;
-        }
-        .video-container {
-            width: 70%;
-            background-color: white;
-            padding: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-        }
-        .video-container h2 {
-            font-size: 26px;
-            color: #333;
-        }
-        .video-container .video-thumbnail {
-            width: 50%;
-            max-width: 600px;
-            border-radius: 10px;
-        }
-        .video-container .disabled-message {
-            color: red;
-            font-size: 18px;
-            margin-top: 20px;
-        }
-        .side-bar {
-            width: 25%;
-            margin-left: 20px;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        .side-bar h3 {
-            font-size: 20px;
-            color: #333;
-        }
-        .side-bar ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        .side-bar ul li {
-            margin: 10px 0;
-        }
-        .footer {
-            background-color: #222;
-            color: white;
-            padding: 10px;
-            text-align: center;
-            margin-top: 20px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>Atividades</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #f2f2f2;
+    }
+
+    button {
+      font-size: 24px;
+      padding: 20px 40px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #218838;
+    }
+  </style>
+  <script>
+    // Evita recarregamentos contínuos com atraso
+    let reloadTimeout;
+    document.addEventListener('mousemove', function () {
+      if (!reloadTimeout) {
+        reloadTimeout = setTimeout(() => {
+          location.reload();
+        }, 1000);
+      }
+    });
+
+    // Redireciona após alerta com pequeno atraso
+    function acessarConteudo() {
+      alert("Você precisa ouvir o áudio antes de acessar a atividade.");
+      setTimeout(() => {
+        window.location.href = "https://screenapp.io/app/#/shared/-RSSc_pRTD";
+      }, 100); // Delay para garantir redirecionamento após o alert
+    }
+  </script>
 </head>
 <body>
-
-    <!-- Header with logo and navigation -->
-    <header>
-        <div class="logo">Vazados de simolandia GO</div>
-        <div class="search-bar">
-            <input type="text" placeholder="Pesquisar...">
-        </div>
-        <div class="menu">
-            <a href="#">Home</a>
-            <a href="#">Trending</a>
-            <a href="#">Subscriptions</a>
-        </div>
-    </header>
-
-    <!-- Main content with video and sidebar -->
-    <div class="main-content">
-        <div class="video-container">
-            <h2>Felipe sendo torado por Nayan em troca de uma CGzona</h2>
-            <p class="disabled-message">Este vídeo não está disponível.</p>
-            <a href="https://ibb.co/qYWMYJXj">
-                <img class="video-thumbnail" src="https://i.ibb.co/QvCFvDzQ/IMG-1674.jpg" alt="Imagem do vídeo" />
-            </a>
-            <p>Este vídeo não pode ser assistido por causar confusão nas sexualidades dos machos alfas.</p>
-        </div>
-
-        <!-- Sidebar with video suggestions -->
-        <div class="side-bar">
-            <h3>Vídeos recomendados</h3>
-            <ul>
-                <li><a href="#">Vídeo 1 - lipe.gmz pagando babão sensacioanl</a></li>
-                <li><a href="#">Vídeo 2 - Rebolando de ladinho pros crias</a></li>
-                <li><a href="#">Vídeo 3 - Recebendo a cg de nayan</a></li>
-            </ul>
-        </div>
-    </div>
-
-    <!-- Footer with copyright -->
-    <footer class="footer">
-        <p>&copy; 2025 XVideos - Todos os direitos reservados.</p>
-    </footer>
-
+  <button onclick="acessarConteudo()">
+    Acessar conteúdo das atividades
+  </button>
 </body>
 </html>
